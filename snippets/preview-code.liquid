@@ -1,0 +1,113 @@
+{% case order %}
+  {% when 1 %}{% assign nth = 'second' %}{% when 2 %}{% assign nth = 'third' %}{% when 3 %}{% assign nth = 'fourth' %}
+  {% when 4 %}{% assign nth = 'fifth' %}{% when 5 %}{% assign nth = 'sixth' %}{% when 6 %}{% assign nth = 'seventh' %}
+  {% when 7 %}{% assign nth = 'eigth' %}{% when 8 %}{% assign nth = 'ninth' %}{% when 9 %}{% assign nth = 'tenth' %}
+{% endcase %}
+{{ forloop.index }}
+<p class="start"><img src="{{ product.featured_image | img_url:"100px" }}" height="70px">{{ product.title }}</p>
+
+{%- form 'product', product, class: form_classes, id: "", data-product-form: '' -%}
+<!--   <center style="width:100%;">Step 1<br>Choose your stamp</center> -->
+  <h3 style="display:none;">{{ product.title }}</h3>
+  {% if product.has_only_default_variant %}
+<!--   	<center style="width:100%;">{{ product.title }}</center> -->
+          <div class="grid__item radio-wrapper product-form__item">
+        <fieldset class="single-option-radio inline-list radios">
+          <input type="radio" name="id" value="{{ product.variants.first.id }}" checked="checked" class="single-option-selector__radio js-single-option-selector"
+                 >
+        </fieldset>
+          </div>
+  {% else %}
+	<div class="grid grid-small"> 
+      <div class="grid__item radio-wrapper product-form__item"{%- if is_color_option -%} hidden{%- endif -%}{% if product.variants.size < 5 %} style="justify-content:center;"{% endif %}>
+        <fieldset class="single-option-radio inline-list radios">
+          {% for variant in product.variants %}
+          <input type="radio" name="id" value="{{ variant.id }}" class="single-option-selector__radio js-single-option-selector"
+                 id="swatch-{{ variant.option1 | handleize }}{{ variant.id }}">
+          <label for="swatch-{{ variant.option1 | handleize }}{{ variant.id }}"{% unless variant_label_state %} class="text-strike"{% endunless %}>
+            {% if variant.option1 == 'Pink' and product.handle contains 'identity-theft' %}
+            {{ 'pinkitp.jpg' | file_img_url: 'small' | img_tag }}
+            {% else %}
+            {{ variant.option1 | handleize | append: '.jpg' | file_img_url: 'small' | img_tag }}
+            {% endif %}
+          </label>
+          {% endfor %}
+        </fieldset>
+      </div>
+	</div>
+  {% endif %}
+  <div class="preview radios">
+    <hr>
+<!--   <center>Step 2<br>How many lines?</center> -->
+<!--     <div class="spb-label-tooltip btns">
+      <input type="radio" id="one{{ product.id }}" name="lines" checked class="one spb-productdescfont spb-productoptiontextcolor spb-productoptionbackground" value="1">
+      <label for="one{{ product.id }}" class="spb-productdescfont spb-productdesctextcolor">One line</label>
+      <input type="radio" id="two{{ product.id }}" name="lines" class="two spb-productdescfont spb-productoptiontextcolor spb-productoptionbackground" value="2">
+      <label for="two{{ product.id }}" class="spb-productdescfont spb-productdesctextcolor">Two lines</label>
+    </div> 
+    <div class="spb-label-tooltip">
+      <input type="text" name="properties[Line 1]" autocomplete="off" class="first spb-productdescfont spb-productoptiontextcolor spb-productoptionbackground" placeholder="Enter text.. (Max 12)" maxlength="12" size="12" required>
+      <span>You've reached the limit</span>
+    </div>
+    <div class="spb-label-tooltip second">
+      <input type="text" name="properties[Line 2]" autocomplete="off" class="second spb-productdescfont spb-productoptiontextcolor spb-productoptionbackground" placeholder="Enter text.. (Max 10)" maxlength="10" size="10">
+      <span>You've reached the limit</span>
+    </div>-->
+  <h4>2. Add Text</h4>
+        <div class="spb-label-tooltip">
+          <label class="spb-productdescfont spb-productdesctextcolor ">First Line <span>Any letter / number | No icons / emoji</span></label>
+          <input type="text" name="properties[Line 1]" autocomplete="off" class="first spb-productdescfont spb-productoptiontextcolor spb-productoptionbackground" placeholder="Line 1 (e.g. Mary)" maxlength="12" size="12" required>
+          <span><span>0</span> / 12</span>
+        </div>
+        <div class="spb-label-tooltip">
+          <label class="spb-productdescfont spb-productdesctextcolor ">Second Line <span>(Optional)</span></label>
+          <input type="text" name="properties[Line 2]" autocomplete="off" class="second spb-productdescfont spb-productoptiontextcolor spb-productoptionbackground" placeholder="Line 2 (e.g. Simmons)" maxlength="10" size="10">
+          <span><span>0</span> / 10</span>
+        </div>
+    <hr>
+<!--     <center>Step 3<br>Final step!</center> -->
+  <div class="steps">
+  <div class="step3">
+        <h4>3. Pick Icon</h4>
+        <label for="noicon_{{ product.id }}">
+          <input id="noicon_{{ product.id }}" type="radio" name="properties[Icon]" class="fas fa-check no_icon" value="No icon"> I don't want an icon
+        </label>
+        <div>
+          <ul>
+            {% for i in (1..3) %}
+              {% assign set = 'iconstitle' | append: i %}
+              {% if section.settings[set] != blank %}
+                <li class="{{ section.settings[set] }}{% if i == 1 %} checked{% endif %}">{{ section.settings[set] }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% for i in (1..3) %}
+            {% assign set = 'iconstitle' | append: i %}{% assign iconsset = 'icons' | append: i %}
+            {% assign icons = section.settings[iconsset] | replace: ', ',',' | replace: ' ,',',' | split: ',' %}
+          	{% if section.settings[set] != blank and icons.size > 0 %}
+              <div class="spb-label-tooltip icons {{ section.settings[set] }}{% if i == 1 %} active{% endif %}">
+                {% for icon in icons %}
+                  <input type="radio" name="properties[Icon]" id="Icon{{ icon }}{{ product.id }}" class="spb-productdescfont spb-productoptiontextcolor spb-productoptionbackground" value="{{ icon }}">
+                  <label for="Icon{{ icon }}{{ product.id }}" class="spb-productdescfont spb-productdesctextcolor">{{ icon | append: '.png' | file_img_url: 'small' | img_tag }}</label>
+                {% endfor %}
+              </div>
+          	{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+    <center style="margin-top:15px;">You're all set! 🙌<br>Take a look at your stamp</center>
+    <div class="spb-label-tooltip preview">
+      <div><span>Your {{ product.title }} Will look like this</span>
+        <div class="img_w_text"><img><div><p></p><p class="hide"></p></div></div></div><img></div>
+  </div>
+  {% if total > order %}
+	<p class="start" text="Great! Click to design your next stamp">Make a Selection</p>
+  {% elsif gifts > 0 %}
+	<p class="start" text="Awesome! Click to choose your gift">Make a Selection</p>
+  {% else %}
+	<div class="row_grid_qnt"   style="width:100%;">
+      <p text="Done! Take me to cart" attr_curr_id="{{ form_id }}" class="disabled btn_sp addtocart_btn bndl stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn{% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">Make a Selection</p>
+    </div>
+  {% endif %}
+{%- endform -%}

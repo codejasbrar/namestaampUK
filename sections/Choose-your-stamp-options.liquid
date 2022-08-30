@@ -1,0 +1,83 @@
+{% include 'bundle-popup' %}
+
+{% schema %}
+  {
+    "name": "Choose Your Stamp Options",
+    "settings": [
+        {
+        "type":"header",
+        "content":"Icons sets"
+      },
+	  {
+	    "type": "text",
+	    "id": "iconstitle1",
+	    "label": "Icons set 1 title",
+	    "default": "Animals"
+	  },
+	  {
+	    "type": "textarea",
+	    "id": "icons1",
+	    "label": "Icons set 1",
+	    "info": "List of comma-separated icons' names like 'Animal-1,Animal-2' etc. Files should be in .png format"
+	  },
+	  {
+	    "type": "text",
+	    "id": "iconstitle2",
+	    "label": "Icons set 2 title",
+	    "default": "Unique"
+	  },
+	  {
+	    "type": "textarea",
+	    "id": "icons2",
+	    "label": "Icons set 2",
+	    "info": "List of comma-separated icons' names like 'Unique-1,Unique-2' etc. Files should be in .png format"
+	  },
+	  {
+	    "type": "text",
+	    "id": "iconstitle3",
+	    "label": "Icons set 3 title",
+	    "default": "Best sellers"
+	  },
+	  {
+	    "type": "textarea",
+	    "id": "icons3",
+	    "label": "Icons set 3",
+	    "info": "List of comma-separated icons' names like 'Best-1,Best-2' etc. Files should be in .png format"
+	  }
+		
+	],
+    "blocks": [
+      {
+        "type": "item",
+		"limit": 10,
+        "name": "Content",
+        "settings": [
+		  
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+			
+          },
+		  {	
+            "type": "collection",
+            "id": "collection",
+            "label": "Choose collection"
+          }
+		]
+	  }
+      
+	],
+    "presets": [
+      {
+        "name": "Choose Your Stamp Options",
+      	"category": "Collection",
+        "blocks": [
+          {
+            "type": "item"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

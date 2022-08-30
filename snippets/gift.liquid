@@ -1,0 +1,43 @@
+{%- form 'product', product, class: form_classes, id: "", data-product-form: '' -%}
+  <div class="head">  
+    <h3><span>Choose your gift</span><i class="fas fa-times"></i></h3>
+    <p class="bar"><span></span></p>
+  </div>
+  <div class="steps">
+    <div class="step1">
+      <h4>Choose Stamp Design</h4>
+      {% if product.has_only_default_variant %}
+        <center style="width:100%;">{{ product.title }}</center>
+        <input name="id" type="hidden" value="{{ product.variants.first.id }}"/>
+      {% else %}
+        <center style="width:100%;">{{ product.options_with_values.first.name }}</center>
+        <div class="grid grid-small">
+          <div class="grid__item radio-wrapper product-form__item"{%- if is_color_option -%} hidden{%- endif -%}{% if product.variants.size < 5 %} style="justify-content:center;"{% endif %}>
+            <fieldset class="single-option-radio inline-list">
+              {% for variant in product.variants %}
+                <input type="radio" name="id" value="{{ variant.id }}" class="single-option-selector__radio js-single-option-selector"
+                      id="swatch-{{ variant.option1 | handleize }}{{ variant.id }}">
+                <label for="swatch-{{ variant.option1 | handleize }}{{ variant.id }}"{% unless variant_label_state %} class="text-strike"{% endunless %}>
+                  {% if variant.option1 == 'Pink' and product.handle contains 'identity-theft' %}
+                    {{ 'pinkitp.jpg' | file_img_url: 'small' | img_tag }}
+                  {% else %}
+                    {{ variant.option1 | handleize | append: '.jpg' | file_img_url: 'small' | img_tag }}
+                  {% endif %}
+                </label>
+              {% endfor %}
+            </fieldset>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="preview">
+    {% if total > order %}
+	  <p class="start" text="Awesome! Click to choose your next gift">YOU MUST CHOOSE A DESIGN</p>
+    {% else %}
+	  <div class="row_grid_qnt" style="width:100%;">
+        <p text="ADD TO CART" class="disabled btn_sp addtocart_btn bndl stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn{% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">YOU MUST CHOOSE A DESIGN</p>
+      </div>
+    {% endif %}
+  </div>
+{%- endform -%}

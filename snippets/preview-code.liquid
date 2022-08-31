@@ -3,7 +3,6 @@
   {% when 4 %}{% assign nth = 'fifth' %}{% when 5 %}{% assign nth = 'sixth' %}{% when 6 %}{% assign nth = 'seventh' %}
   {% when 7 %}{% assign nth = 'eigth' %}{% when 8 %}{% assign nth = 'ninth' %}{% when 9 %}{% assign nth = 'tenth' %}
 {% endcase %}
-{{ forloop.index }}
 <p class="start"><img src="{{ product.featured_image | img_url:"100px" }}" height="70px">{{ product.title }}</p>
 
 {%- form 'product', product, class: form_classes, id: "", data-product-form: '' -%}
@@ -102,12 +101,15 @@
         <div class="img_w_text"><img><div><p></p><p class="hide"></p></div></div></div><img></div>
   </div>
   {% if total > order %}
-	<p class="start" text="Great! Click to design your next stamp">Make a Selection</p>
+<!-- 	<p class="start" text="Great! Click to design your next stamp">Make a Selection</p> -->
   {% elsif gifts > 0 %}
 	<p class="start" text="Awesome! Click to choose your gift">Make a Selection</p>
   {% else %}
-	<div class="row_grid_qnt"   style="width:100%;">
+    {% if l_index > last_bndle %}
+  <div class="row_grid_qnt"   style="width:100%;">
       <p text="Done! Take me to cart" attr_curr_id="{{ form_id }}" class="disabled btn_sp addtocart_btn bndl stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn{% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">Make a Selection</p>
     </div>
+  {% endif %}
+	
   {% endif %}
 {%- endform -%}

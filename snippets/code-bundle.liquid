@@ -5,6 +5,7 @@
 {% elsif tag contains 'gift-' %}{% assign bundle = true %}{% assign totalgifts = totalgifts | plus: 1 %}
 {% endif %}
 {% endfor %}
+{% assign last_bndle = totalbndls | minus: 1 %}
 {% if bundle %}
 <style>form#AddToCartForm>div.grid__item.row_grid_qnt{display:none;}</style>
 {% comment %} <center style="color:#ff8e9e;width:100%;margin:15px 0;font-weight:bold;font-size:25px;">Bundle & save<br>Your family pack is here!</center> {% endcomment %}
@@ -200,12 +201,15 @@
 {% assign form_cls = form_classes | remove: ' active' %}
 {% assign bndls = 0 %}
 {% assign gifts = 0 %}
+
 {% for tag in product.tags %}
 {% if tag contains 'bndl-' %}
   {% assign bndls = bndls | plus: 1 %}
 {% assign prod = tag | split: '_' | last %}
-  {% render 'preview-code' product: all_products[prod], order: bndls, total: totalbndls, gifts: totalgifts, form_classes: form_cls %}
-{% endif %}
+
+  {% render 'preview-code' product: all_products[prod], order: bndls,last_bndle: last_bndle, total: totalbndls,l_index: forloop.index, gifts: totalgifts, form_classes: form_cls %}
+
+  {% endif %}
 {% endfor %}
 {% assign form_cls = form_cls | append: ' gift' %}
 {% for tag in product.tags %}

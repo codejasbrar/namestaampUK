@@ -761,6 +761,7 @@ button.selected_btn {
           this.nextElementSibling.removeAttribute('style');
           form.querySelector('div.spb-label-tooltip.preview>div>div>div>p:first-child').innerHTML = this.value;
         }
+  console.log("form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked')",form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked'));
         if (this.value.length > 0 && form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked') && btn){
           if (btn.hasAttribute('text')){btn.innerHTML = btn.getAttribute('text');}
           btn.classList.remove('disabled');
@@ -769,6 +770,7 @@ button.selected_btn {
         }
         [].forEach.call(swatches, swatch=>{
           swatch.onchange=()=>{
+            console.log("this.value.length",this.value.length);
             if (this.value.length > 0 && btn){
               if (btn.hasAttribute('text')){btn.innerHTML = btn.getAttribute('text');}
               btn.classList.remove('disabled');
@@ -1105,15 +1107,16 @@ $(document).ready(function(){
   
   });
 
-    $(document).on("click",".step3 label", function(){
+    $(document).on("click",".step3 label", function(event){
         var getchecked = $(this).eq(0);
       console.log("getchecked",getchecked);
+      console.log($(this).find("input").is(":checked"));
       if($(this).find("input").is(":checked")){
-        // $(this).find("input").prop("checked",false);
+        $(this).find("input").prop("checked",false);
         $(this).next().addClass('hidden');        
       }else{
         $(this).find("input").prop("checked",true);
-        $(this).next().removeClass('hidden');                
+        $(this).next().removeClass('hidden');  
       }
     });
   

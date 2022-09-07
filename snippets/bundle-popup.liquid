@@ -70,16 +70,12 @@
               </div>
               <div class="colletion-grid-footer">
                 <div class="colletion-grid-footer-content">
-                   <ul>
-                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>1 X Black ink stamp</li>
-                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>1 X White ink stamp</li>
-                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>1 X Transparent stickers set</li>
-                  </ul>
+{{ product.metafields.custom.product_bundle_content }}
                   <p>The original stamp. Great for light colored clothes.</p>
                 </div>
       
                 <div class="product-cart-btn customize_variant_id">
-                  <button class="current_variant_id" attr_current_id="{{ product.selected_or_first_available_variant.id }}">select bundle</button>
+                  <button class="current_variant_id" data-current_coll="choose-stamp" attr_current_id="{{ product.selected_or_first_available_variant.id }}">select bundle</button>
                 </div>
                 
               </div>
@@ -96,7 +92,7 @@
       </div>
       <div class="collection-block-products">
 
-      {% for product in collections.choose-bundle.products %}
+      {% for product in collections.choose-stamp-2.products %}
       
         <div class="colletion-product-grid" >
               <div class="colletion-product-grid-inner">
@@ -105,21 +101,23 @@
                 </div>
                 <div class="colletion-product-grid-content">
                   <h2>{{ product.title }}</h2>
-                  <ul>
-                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>2 X Black ink stamp</li>
-                  </ul>
+                  <div class="colletion-grid-price">  
+                    <p><span class="regular-price">{{ product.price | money }}</span><span class="compare-price"><s>$59.99</s></span><span class="save-price">(save 17%)</span></p>
+                  </div>                 
                 </div>
               </div>
               <div class="colletion-grid-footer">
                 <div class="colletion-grid-footer-content">
+                   <ul>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>2 X Black ink stamp</li>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>2 X White ink stamp</li>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>2 X Transparent stickers set</li>
+                  </ul>
                   <p>The original stamp. Great for light colored clothes.</p>
                 </div>
-                <div class="colletion-grid-price">  
-                  <p><span class="regular-price">{{ product.price | money }}</span><span class="compare-price"><s>$59.99</s></span><span class="save-price">(save 17%)</span></p>
-                </div>
       
-                <div class="product-cart-btn">
-                  <button>select bundle</button>
+                <div class="product-cart-btn customize_variant_id">
+                  <button class="current_variant_id" data-current_coll="choose-stamp-2" attr_current_id="{{ product.selected_or_first_available_variant.id }}">select bundle</button>
                 </div>
                 
               </div>
@@ -135,31 +133,32 @@
         <h3>Save up to 58% with bundles</h3>
       </div>
       <div class="collection-block-products">
-      {% for product in collections.choose-bundle.products %}
-        <div class="colletion-product-grid" >
+      {% for product in collections.choose-stamp-3.products %}
+               <div class="colletion-product-grid" >
               <div class="colletion-product-grid-inner">
                 <div class="colletion-product-grid-image">
                   <img src="{{ product.featured_image | img_url:'master' }}">
                 </div>
                 <div class="colletion-product-grid-content">
                   <h2>{{ product.title }}</h2>
-                  <ul>
-                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>2 X Black ink stamp</li>
-                  </ul>
+                  <div class="colletion-grid-price">  
+                    <p><span class="regular-price">{{ product.price | money }}</span><span class="compare-price"><s>$59.99</s></span><span class="save-price">(save 17%)</span></p>
+                  </div>                 
                 </div>
               </div>
               <div class="colletion-grid-footer">
                 <div class="colletion-grid-footer-content">
+                   <ul>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>3 X Black ink stamp</li>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>3 X White ink stamp</li>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>3 X Transparent stickers set</li>
+                  </ul>
                   <p>The original stamp. Great for light colored clothes.</p>
                 </div>
-                <div class="colletion-grid-price">  
-                  <p><span class="regular-price">{{ product.price | money }}</span><span class="compare-price"><s>$59.99</s></span><span class="save-price">(save 17%)</span></p>
-                </div>
       
-                <div class="product-cart-btn">
-                  <button>select bundle</button>
+                <div class="product-cart-btn customize_variant_id">
+                  <button class="current_variant_id" data-current_coll="choose-stamp-3" attr_current_id="{{ product.selected_or_first_available_variant.id }}">select bundle</button>
                 </div>
-                
               </div>
             </div>
             
@@ -173,32 +172,33 @@
         <h3>Save up to 58% with bundles</h3>
       </div>
     <div class="collection-block-products">
-      {% for product in collections.choose-bundle.products %}
+      {% for product in collections.choose-stamp-4.products %}
       
-        <div class="colletion-product-grid" >
+       <div class="colletion-product-grid" >
               <div class="colletion-product-grid-inner">
                 <div class="colletion-product-grid-image">
                   <img src="{{ product.featured_image | img_url:'master' }}">
                 </div>
                 <div class="colletion-product-grid-content">
                   <h2>{{ product.title }}</h2>
-                  <ul>
-                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>2 X Black ink stamp</li>
-                  </ul>
+                  <div class="colletion-grid-price">  
+                    <p><span class="regular-price">{{ product.price | money }}</span><span class="compare-price"><s>$59.99</s></span><span class="save-price">(save 17%)</span></p>
+                  </div>                 
                 </div>
               </div>
               <div class="colletion-grid-footer">
                 <div class="colletion-grid-footer-content">
+                   <ul>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>4 X Black ink stamp</li>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>4 X White ink stamp</li>
+                    <li><span><img src="https://cdn.shopify.com/s/files/1/0512/5665/6053/t/35/assets/check.svg?v=1660307006"></span>4 X Transparent stickers set</li>
+                  </ul>
                   <p>The original stamp. Great for light colored clothes.</p>
                 </div>
-                <div class="colletion-grid-price">  
-                  <p><span class="regular-price">{{ product.price | money }}</span><span class="compare-price"><s>$59.99</s></span><span class="save-price">(save 17%)</span></p>
-                </div>
       
-                <div class="product-cart-btn">
-                  <button class="">select bundle</button>
+                <div class="product-cart-btn customize_variant_id">
+                  <button class="current_variant_id" data-current_coll="choose-stamp-4" attr_current_id="{{ product.selected_or_first_available_variant.id }}">select bundle</button>
                 </div>
-                
               </div>
             </div>
             
@@ -214,13 +214,58 @@
 
   <div class="product_variant_block">
        {% for product in collections.choose-stamp.products %}
-            <div class="popup-product" id="currnt_product_div_id_{{ product.selected_or_first_available_variant.id }}" style="display:none;">
+            <div class="popup-product" id="currnt_product_div_id_choose-stamp-{{ product.selected_or_first_available_variant.id }}" style="display:none;">
               <h3 style="display:none;">{{ product.title }}</h3>
               {% assign varID = product.selected_or_first_available_variant.id %}
               <div class="product-form  ">
                   {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
               </div>
             </div>
+      {% endfor %}
+      {% for product in collections.choose-stamp-2.products %}
+          <div class="popup-product" id="currnt_product_div_id_choose-stamp-2-{{ product.selected_or_first_available_variant.id }}" style="display:none;">
+            <h3 style="display:none;">{{ product.title }}</h3>
+            {% assign varID = product.selected_or_first_available_variant.id %}
+            <div class="product-form bundle_1">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+            <div class="product-form bundle_2" style="display:none">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+          </div>
+      {% endfor %}
+      {% for product in collections.choose-stamp-3.products %}
+          <div class="popup-product" id="currnt_product_div_id_choose-stamp-3{{ product.selected_or_first_available_variant.id }}" style="display:none;">
+            <h3 style="display:none;">{{ product.title }}</h3>
+            {% assign varID = product.selected_or_first_available_variant.id %}
+            <div class="product-form bundle_1">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+            <div class="product-form bundle_2" style="display:none">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+            <div class="product-form bundle_3" style="display:none">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+          </div>
+      {% endfor %}
+      {% for product in collections.choose-stamp-4.products %}
+          <div class="popup-product" id="currnt_product_div_id_choose-stamp-4-{{ product.selected_or_first_available_variant.id }}" style="display:none;">
+            <h3 style="display:none;">{{ product.title }}</h3>
+            {% assign varID = product.selected_or_first_available_variant.id %}
+            <div class="product-form bundle_1">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+            <div class="product-form bundle_2" style="display:none">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+            <div class="product-form bundle_3" style="display:none">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+            <div class="product-form bundle_4" style="display:none">
+                {%- render 'code-bundle', form_classes: 'product-single__form', product: product, form_id: form_id, data-product-form: '' -%}
+            </div>
+          </div>
       {% endfor %}
     </div>
   
@@ -230,6 +275,7 @@
 </div>
 
 </div>
+{{ "bundle-popup.css" | asset_url | stylesheet_tag}}
 
 <script>
 // Get the modal_popup
@@ -266,9 +312,11 @@ window.onclick = function(event) {
     $(".product-cart-btn button").removeClass('selected_btn');
     $(".colletion-product-grid").removeClass('selected_product');
     var var_id = $(this).attr('attr_current_id');
+    var current_coll = $(this).data('current_coll');
+
     $(this).addClass('selected_btn');
     $(this).parents(".colletion-product-grid").addClass('selected_product');
-    $('.first_stamp').attr("data-current_id",var_id);
+    $('.first_stamp').attr("data-current_id",current_coll+'-'+var_id);
   });
 });
   $(".open_numberic_step").click(function(){			
@@ -281,402 +329,27 @@ window.onclick = function(event) {
 		$(this).addClass('selected');
   
 		});
-  $(".first_stamp").click(function(){			
-			console.log(this);
+        $(".first_stamp").click(function(){
+          console.log(this);
           $('.first_step_block').hide();
           var current_id = $(this).data('current_id');
+          var current_coll = $(this).data('current_coll');
           $('.popup-product').hide();   
           $('#currnt_product_div_id_'+current_id).show();
-		// $('.collection-btn-flex-grid button').removeClass('selected');
-		// $(this).parents('.first_step_block').hide();
-  
-    $('#currnt_product_div_id_'+current_id).find('form').eq(0).css({"min-height":"auto","max-height":"max-content"});
+          $('#currnt_product_div_id_'+current_id).find('form').eq(0).css({"min-height":"auto","max-height":"max-content"});
+		});
+        $(document).on("click",".next_step",function(){
+          console.log("next_step",this);
+          $(this).parents('.product-form').hide();
+          $(this).parents('.product-form').next('.product-form').show();
+          $(this).parents('.product-form').next('.product-form').find('.addtocart_btn').attr('disabled','disabled');
+          $(this).parents('.product-form').next('.product-form').trigger('focus');
 		});
 	
 	</script>
-
-<style>
-  .colletion-product-grid-heading {
-    display: grid;
-    justify-content: center;
-    margin-top: 15px;
-}
-  .collection-block-products {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: flex-start;
-    gap: 15px;
-}
-.collection-products {
-  display:none;
-}
-
-.personlize-btn {
-  display:none;
-}
-p.start:not(.tap).disabled,.next.disabled,p.start {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  border-radius: 0px !important;
-  background: #ffe0fc !important;
-  color: #df4376 !important;
-}
-/* The modal_popup (background) */
-.modal_popup {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 9; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-.close_popup {
-    padding: 25px 50px 25px;
-    border-bottom: 1px solid #009261;
-}
-/* modal_popup Content */
-.modal_popup-content {
-  background-color: transparent;
-  margin: auto;
-  padding: 2px;
-  border: 1px solid #888;
-  width: 100%;
-  max-width: 860px;
-}
-/* The Close Button */
-.close {
-  color: #999999;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* stamp css */
-
- .collection-btn-flex-grid button {
-    width: 80px;
-    height: 80px;
-    background: #E1F4FF;
-    border-radius: 20px;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    justify-content: center;
-}
-  .collection-btn-flex {
-    max-width: 400px;
-    margin: 0px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
-
-
-.collection-btns {
-    max-width: 400px;
-    margin: 0px auto;
-    padding: 0px 40px 20px;
-    border: solid 0px #ddd;
-}
-
-.collection-bundle-heading h2 {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 22px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-
-  .collection-sub-heading h3 {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-
-.collection-bundle-content p {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
-    color: #DF4376;
-  justify-content: center;
-}
-    .bundle-content-footer p {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    color: #009261;
-    margin-top: 10px;
-}
-.bundle-content-footer p {
-    display: none;
-}
-
-
-  section.compare-details {
-    margin-bottom: 50px;
-}
-
-  section.compare-details {
-    margin-bottom: 50px;
-}
-
-.collection-bundle-content p {
-    margin-bottom: 10px;
-}
-
-
-.collection-bundle-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}     
-
-.collection-bundle-heading h2 {
-    margin-bottom: 0px;
-}
-.collection-sub-heading {
-    margin-top: 40px;
-}
-  .collection-sub-heading h3 {
-    margin-bottom: 0px;
-}  
-
- .collection-btn-flex-grid button:hover {
-    border: solid 2px #522D8C;
-    opacity: 1;
-}   
- .collection-btn-flex-grid button.selected {
-    border: solid 2px #522D8C;
-    opacity: 1;
-}   
-
-section.compare-details {
-    background: #fff;
-    border-radius: 35px;
-    padding:0px 0px 20px;
-}
-
-.colletion-product-grid-heading h2 {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 25px;
-    color: #000000;
-    margin: 0px;
-}
-
-.colletion-product-grid-heading h3 {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
-    color: #DF4376;
-   margin: 0px;
-}
-
-.colletion-product-grid {
-    margin-top: 10px;
-}
-
-.colletion-product-grid-image img {
-    width: 100px;
-}   
-
-.colletion-product-grid-content h2 {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    color: #000000;
-    margin-bottom: 10px;
-}
-
-.colletion-product-grid-content ul li {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
-    color: #000000;
-    list-style-type: none;
-}
-
-.colletion-product-grid-content ul {
-    margin-left: 0px;
-}  
-
- .colletion-product-grid-inner {
-    display: flex;
-    gap: 10px;
-}
-
-.colletion-grid-footer-content p {
  
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    
-    color: #000000;
-    margin: 0px;
-}  
-
-  .colletion-grid-footer-content {
-    margin-bottom: 10px;
-}
-
- .colletion-grid-footer {
-    margin-top: 10px;
-} 
-form.product-single__form .step3>label>input.no_icon{
-  content: none;
-  margin: 2px;
-  display: inline-block;
-  appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    width: 24px;
-    height: 24px;
-    padding: 0;
-    vertical-align: middle;
-    margin-right: 10px;
-    border: 2px solid #EDD6D6;
-    border-radius: 5px;
-    transition: color,background,border .5s;
-    position: relative;
-    pointer-events: none;
-    outline: 0;
-    color: #df4376;
-}
-form.product-single__form .step3>label>input.no_icon:before{
-    content: none;
-}  
-  form.product-single__form .step3>label>input.no_icon:checked:before{
-    content: "\f00c";
-    margin:2px;
-    display:block;
-}  
- .colletion-grid-price p span {
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 16px;
-    color: #DF4376;
-    margin-right: 10px;
-} 
-
-span.compare-price s {
-    color: #000;
-}
-
-span.save-price {
-    color: #009261 !important;
-}
-
-.colletion-product-grid {
-    border: 1px solid #C6B3E6;
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 20px;
-}
-.colletion-product-grid.selected_product {
-    border: 2px solid #522D8C;
-}  
-.colletion-grid-price p {
-    margin: 0px;
-}
-.collection-products {
-    padding-bottom: 60px;
-}
-
-.product-cart-btn button {
-    border: 2px solid #522D8C;
-    border-radius: 20px;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 19px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #522D8C;
-    height: 43px;
-    width: 100%;
-    margin-top: 20px;
-}
-
-button.selected_btn {
-    background: #009261;
-    border-color: #009261;
-    color: #fff;
-}
-
-   .personlize-btn {
-    padding: 20px;
-}
-
-.personlize-btn button {
-    height: 49px;
-    background: #522D8C;
-    border-radius: 20px;
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 14px;
-    line-height: 19px;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.98);
-    width: 100%;
-}  
-</style>
 
 <script>
-
-
   const forms = document.querySelectorAll('form.product-single__form');
 
   [].forEach.call(forms, form=>{
@@ -744,7 +417,8 @@ button.selected_btn {
       }
     }
     if (form.querySelector('p.start')){
-      var btn = form.querySelector('p.start'); btn.classList.add('disabled')
+      var btn = form.querySelector('p.start'); 
+      btn.classList.add('disabled')
     } else if (form.querySelector('.btn_sp.addtocart_btn.bndl')){
       var btn = form.querySelector('.btn_sp.addtocart_btn.bndl');
     } else {
@@ -761,25 +435,35 @@ button.selected_btn {
           this.nextElementSibling.removeAttribute('style');
           form.querySelector('div.spb-label-tooltip.preview>div>div>div>p:first-child').innerHTML = this.value;
         }
-  console.log("form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked')",form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked'));
-        if (this.value.length > 0 && form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked') && btn){
-          if (btn.hasAttribute('text')){btn.innerHTML = btn.getAttribute('text');}
-          btn.classList.remove('disabled');
-        } else if (btn) {
-          btn.innerHTML = 'Make a Selection'; btn.classList.add('disabled');
-        }
-        [].forEach.call(swatches, swatch=>{
-          swatch.onchange=()=>{
-            console.log("this.value.length",this.value.length);
-            if (this.value.length > 0 && btn){
-              if (btn.hasAttribute('text')){btn.innerHTML = btn.getAttribute('text');}
-              btn.classList.remove('disabled');
-            } else if (btn){
-              btn.innerHTML = 'Make a Selection'
-              btn.classList.add('disabled');
+  console.log("form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked')",form.querySelector('input.single-option-selector__radio.js-single-option-selector'));
+        if (this.value.length > 0 && btn){
+          var total_p_form = $(btn).parents(".popup-product").find('.product-form').length;
+          console.log("total_p_form=>",total_p_form)
+          if($(btn).parents('.product-form').index() < total_p_form){
+            btn.classList.remove('disabled');  
+            btn.classList.remove('bndl');  
+            btn.classList.add('next_step');  
+          }else{
+            if (btn.hasAttribute('text')){
+              btn.innerHTML = btn.getAttribute('text');
             }
+            btn.classList.remove('disabled');            
           }
-        });
+        } else if (btn) {
+          btn.innerHTML = 'Customize Second Bundle'; btn.classList.add('disabled');
+        }
+        // [].forEach.call(swatches, swatch=>{
+        //   swatch.onchange=()=>{
+        //     console.log("this.value.length",this.value.length);
+        //     if (this.value.length > 0 && btn){
+        //       if (btn.hasAttribute('text')){btn.innerHTML = btn.getAttribute('text');}
+        //       btn.classList.remove('disabled');
+        //     } else if (btn){
+        //       btn.innerHTML = 'Make a Selection'
+        //       btn.classList.add('disabled');
+        //     }
+        //   }
+        // });
       }
     } else if (form.querySelector('input.single-option-selector__radio.js-single-option-selector') && btn){
       [].forEach.call(swatches, swatch=>{swatch.onchange=()=>{
@@ -818,26 +502,6 @@ button.selected_btn {
       }
     });
 
-    // var icons = form.querySelectorAll('div.step3 input');
-    // [].forEach.call(icons, icon=>{
-    //   icon.onchange=()=>{
-    //     if (icon.id == 'noicon'){
-    //       form.querySelector('div.preview>div.spb-label-tooltip>img').src = '';
-    //       form.querySelector('div.preview>div.spb-label-tooltip>img').removeAttribute('style');
-    //       if (icon.checked){
-    //         icon.parentElement.nextElementSibling.classList.add('hidden');
-    //         form.querySelector('p.bar>span').style.width = '85%';
-    //       } else {
-    //         icon.parentElement.nextElementSibling.classList.remove('hidden');
-    //         form.querySelector('p.bar>span').style.width = '75%';
-    //       }
-    //     } else {
-    //       form.querySelector('div.preview>div.spb-label-tooltip>img').src = icon.nextElementSibling.firstElementChild.src;
-    //       form.querySelector('div.preview>div.spb-label-tooltip>img').style.display = 'block';
-    //       form.querySelector('p.bar>span').style.width = '85%';
-    //     }
-    //   }
-    // });
 
     $(document).on("click","fieldset.single-option-radio.inline-list.radios label.text-strike", function(){
         var getsrc = $(this).find("img").attr("src");        
@@ -892,32 +556,6 @@ button.selected_btn {
       }
     });
 
-// var inputs = form.querySelectorAll('input.spb-productdescfont.spb-productoptiontextcolor.spb-productoptionbackground');
-//     [].forEach.call(inputs, input=>{
-//       input.onkeyup=()=>{
-//         // input.nextElementSibling.firstElementChild.innerHTML = input.value.length;
-//         form.querySelector('p.'+input.id).innerHTML = input.value;
-//         if (input.id == 'first' && input.value.length > 0){
-//           form.querySelector('div.step3').classList.add('show');
-//           if (form.querySelector('div.step3 input:checked')){
-//             form.querySelector('p.bar>span').style.width = '85%';
-//           } else {
-//             form.querySelector('p.bar>span').style.width = '75%';
-//           }
-//           if (btn){
-//             if (btn.hasAttribute('text')){btn.innerHTML = btn.getAttribute('text');}
-//             btn.classList.remove('disabled');
-//           }
-//         } else if (input.id == 'first' && input.value.length < 1){
-//           form.querySelector('div.step3').classList.remove('show');
-//           form.querySelector('p.bar>span').style.width = '60%';
-//           if (btn){btn.innerHTML = 'YOU NEED TO ADD TEXT'; btn.classList.add('disabled');}
-//         } else if (input.id == 'second' && input.parentElement.previousElementSibling.children[1].value.length < 1 && btn){
-//           btn.innerHTML = "YOU CAN'T LEAVE THE FIRST LINE EMPTY";
-//         }
-//       }
-//     });
-
   /*
     let btns = form.querySelectorAll('div.spb-label-tooltip.btns>input');
     [].forEach.call(btns, btn=>{
@@ -946,7 +584,7 @@ button.selected_btn {
   
     let labels = form.querySelectorAll('.radios label');
     [].forEach.call(labels, label=>{
-      console.log("label.firstElementChild.id",label.firstElementChild.id);
+      // console.log("label.firstElementChild.id",label.firstElementChild.id);
       label.onclick=e=>{
         label.previousElementSibling.checked = true;
         label.previousElementSibling.dispatchEvent(new Event('change',{bubbles:true}));
@@ -969,19 +607,23 @@ button.selected_btn {
 
          $(document).on("click",".btn_sp.addtocart_btn.bndl",function(e){
   // if (document.querySelector('.btn_sp.addtocart_btn.bndl')){
-  console.log("test click");
+  // console.log("test click");
     // document.querySelector('.btn_sp.addtocart_btn.bndl').onclick = function(e){
       e.preventDefault();
       this.innerHTML = 'Adding to cart...';
       var popup_product = $(this).parents(".popup-product");
       var forms = $(this).parents(".popup-product").find("form");
+      var product_form = $(this).parents(".popup-product").find('.product-form');
+           
       var items = [
+        {% comment %}
         {%- unless product.tags contains 'nosticktape' -%}
           {id:41409529446581, quantity:1, properties: {'Bundle': $(popup_product).find('h3').text()}},
           {id:41409529053365, quantity:1, properties: {'Bundle': $(popup_product).find('h3').text()}}
         {%- endunless -%}
+        {% endcomment %}
       ];
-        console.log(forms);
+        // console.log(forms);
 
      // var currentformid = localStorage.getItem("currentformid");
     // console.log(currentformid); 
@@ -992,78 +634,87 @@ button.selected_btn {
        // form.push(currentformid);
     var vrnt, count = 0;
   // console.log(count);
-      // [].forEach.call(forms, form=>{
+      [].forEach.call(product_form, form=>{
 
-         // console.log("forms[0]",forms[0]);
-       
+         // console.log("product_form=>",product_form);
+         // console.log("product_form=>",form);
+       var form = $(form).find('form');
         
-        if (forms[1].querySelector('select.product-single__variants.product-form__item')){
+        if (form[1].querySelector('select.product-single__variants.product-form__item')){
           // vrnt = forms[1].querySelector('select.product-single__variants.product-form__item option').value;
-        } else if (forms[0].querySelector('input[name="id"][type="hidden"]')){
-         vrnt = forms[0].querySelector('input[name="id"][type="hidden"]').value;
-        console.log("select vrnt=>",vrnt);
-        } else if (forms[1].querySelector('input.single-option-selector__radio.js-single-option-selector:checked')){
-          // var vrnt = forms[1].querySelector('input.single-option-selector__radio.js-single-option-selector:checked').value;
-        console.log("option select vrnt=>",vrnt);
+        } else if (form[0].querySelector('input[name="id"][type="hidden"]')){
+         vrnt = form[0].querySelector('input[name="id"][type="hidden"]').value;
+        // console.log("select vrnt=>",vrnt);
+        } else if (form[1].querySelector('input.single-option-selector__radio.js-single-option-selector:checked')){
+          // var vrnt = form[1].querySelector('input.single-option-selector__radio.js-single-option-selector:checked').value;
+        // console.log("option select vrnt=>",vrnt);
         } else {
           // var vrnt = null;
         }
-//         console.log("forms",count);
-// if(count < 0){
-//   return
-// }
-       var props = {'Bundle': $(forms[1]).find('h3').text()};
-        if ($(forms[2]).find('h3').text()){
-          if ($(forms[2]).find('h3').text().length > 0){
-            props['Bundle 1'] = $(forms[2]).find('h3').text();
-          }
-        }
-        if ($(forms[3]).find('h3').text()){
-          if ($(forms[3]).find('h3').text().length > 0){
-            props['Bundle 2'] = $(forms[3]).find('h3').text();
-          }
-        }
-        if (forms[1].querySelector('input.first')){
-          if (forms[1].querySelector('input.first').value.length > 0){
-            props['Line 1'] = forms[1].querySelector('input.first').value;
-          }
-        }
-        if (forms[2].querySelector('input.first')){
-          if (forms[2].querySelector('input.first').value.length > 0){
-            props['item 2 Line 1'] = forms[2].querySelector('input.first').value;
-          }
-        }
-        if (forms[3].querySelector('input.first')){
-          if (forms[3].querySelector('input.first').value.length > 0){
-            props['item 3 Line 1'] = forms[3].querySelector('input.first').value;
-          }
-        }
 
-        if (forms[1].querySelector('input.second')){
-          if (forms[1].querySelector('input.second').value.length > 0){
-            props['Line 2'] = forms[1].querySelector('input.second').value;
+      var props = {'Product 1': $(form[1]).find('h3').text()};
+      //This is start of first Stamp  
+           var v_sku = form[1].querySelector('input.single-option-selector__radio.js-single-option-selector:checked').getAttribute('data-sku');
+        props['Black Stamp SKU'] = v_sku;
+        if (form[1].querySelector('input.first')){
+          if (form[1].querySelector('input.first').value.length > 0){
+            props['Black Stamp Line 1'] = form[1].querySelector('input.first').value;
           }
         }
-        if (forms[2].querySelector('input.second')){
-          if (forms[2].querySelector('input.second').value.length > 0){
-            props['item 2 Line 2'] = forms[2].querySelector('input.second').value;
+       if (form[1].querySelector('input.second')){
+          if (form[1].querySelector('input.second').value.length > 0){
+            props['Black Stamp Line 2'] = form[1].querySelector('input.second').value;
           }
         }
-        if (forms[3].querySelector('input.second')){
-          if (forms[3].querySelector('input.second').value.length > 0){
-            props['item 3 Line 2'] = forms[3].querySelector('input.second').value;
-          }
-        }
-        if (forms[1].querySelector('div.step3 input:checked')){
-          props['Icon'] = forms[1].querySelector('div.step3 input:checked').value;
-        }
-        if (forms[2].querySelector('div.step3 input:checked')){
-          props['item 2 Icon'] = forms[2].querySelector('div.step3 input:checked').value;
-        }
-        if (forms[3].querySelector('div.step3 input:checked')){
-          props['item 3 Icon'] = forms[3].querySelector('div.step3 input:checked').value;
-        }
+      if (form[1].querySelector('div.step3 input:checked')){
+          props['Black Stamp Icon'] = form[1].querySelector('div.step3 input:checked').value;
+        }     
+        props["item_"+count+"data"] = count;
 
+        //This is End of First Stamp
+           
+      //This is start of second Stamp 
+        if(form[2] != undefined){
+           props['Product 2'] =  $(form[2]).find('h3').text();
+           var v_sku = form[2].querySelector('input.single-option-selector__radio.js-single-option-selector:checked').getAttribute('data-sku');
+           props['White Stamp SKU'] = v_sku;
+        if (form[2].querySelector('input.first')){
+          if (form[2].querySelector('input.first').value.length > 0){
+            props['White Stamp Line 1'] = form[2].querySelector('input.first').value;
+          }
+        }
+       if (form[2].querySelector('input.second')){
+          if (form[2].querySelector('input.second').value.length > 0){
+            props['White Stamp Line 2'] = form[2].querySelector('input.second').value;
+          }
+        }
+      if (form[2].querySelector('div.step3 input:checked')){
+          props['White Stamp Icon'] = form[2].querySelector('div.step3 input:checked').value;
+        }     
+      }
+       //This is end of second Stamp    
+                 
+      //This is start of third Stamp 
+        if(form[3] != undefined){
+           props['Product 3'] =  $(form[3]).find('h3').text();
+           // var v_sku = form[3].querySelector('input.single-option-selector__radio.js-single-option-selector:checked').getAttribute('data-sku');
+           // props['Stickers SKU'] = v_sku;
+        if (form[3].querySelector('input.first')){
+          if (form[3].querySelector('input.first').value.length > 0){
+            props['Stickers Line 1'] = form[3].querySelector('input.first').value;
+          }
+        }
+       if (form[3].querySelector('input.second')){
+          if (form[3].querySelector('input.second').value.length > 0){
+            props['Stickers Line 2'] = form[3].querySelector('input.second').value;
+          }
+        }
+      if (form[3].querySelector('div.step3 input:checked')){
+          props['Stickers Icon'] = form[3].querySelector('div.step3 input:checked').value;
+        }     
+      }
+       //This is end of Third Stamp    
+       
            // props.push({properties:props});
  
         // if(vrnt == null){
@@ -1071,12 +722,13 @@ button.selected_btn {
         // } else {
          
         // }
-       // count = count + 1;
-      // });
-        console.log("props=>",props);
+        items.push({quantity:1, id:vrnt, properties:props});
+         count = count + 1;
+      });
+           // exit();
+        // console.log("props=>",props);
       // items.push({quantity:1, id:vrnt, properties:props});
-items.push({quantity:1, id:vrnt, properties:props});
-       console.log(items);
+       // console.log(items);
   // exit();
       fetch('/cart/add.js', {
         method: 'POST',

@@ -12,8 +12,7 @@
 <!--   	<center style="width:100%;">{{ product.title }}</center> -->
           <div class="grid__item radio-wrapper product-form__item">
         <fieldset class="single-option-radio inline-list radios">
-          <input type="radio" name="id" value="{{ product.variants.first.id }}" checked="checked" class="single-option-selector__radio js-single-option-selector"
-                 >
+        <input type="radio" name="id" value="{{ product.selected_or_first_available_variant.id }}" data-sku="{{ product.selected_or_first_available_variant.sku }}" checked="checked" class="single-option-selector__radio js-single-option-selector">
         </fieldset>
           </div>
   {% else %}
@@ -21,7 +20,7 @@
       <div class="grid__item radio-wrapper product-form__item"{%- if is_color_option -%} hidden{%- endif -%}{% if product.variants.size < 5 %} style="justify-content:center;"{% endif %}>
         <fieldset class="single-option-radio inline-list radios">
           {% for variant in product.variants %}
-          <input type="radio" name="id" value="{{ variant.id }}" class="single-option-selector__radio js-single-option-selector"
+          <input type="radio" name="id" data-sku="{{ variant.sku }}" value="{{ variant.id }}" class="single-option-selector__radio js-single-option-selector"
                  id="swatch-{{ variant.option1 | handleize }}{{ variant.id }}">
           <label for="swatch-{{ variant.option1 | handleize }}{{ variant.id }}"{% unless variant_label_state %} class="text-strike"{% endunless %}>
             {% if variant.option1 == 'Pink' and product.handle contains 'identity-theft' %}
@@ -107,7 +106,7 @@
   {% else %}
     {% if l_index > last_bndle %}
   <div class="row_grid_qnt"   style="width:100%;">
-      <p text="Done! Take me to cart" attr_curr_id="{{ form_id }}" class="disabled btn_sp addtocart_btn bndl stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn{% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">Make a Selection</p>
+      <p text="Done! Take me to cart" attr_curr_id="{{ form_id }}" class="disabled btn_sp addtocart_btn bndl stiky_button{% if section.settings.enable_payment_button %} dynamic_paybtn{% endif %}{% if section.settings.shake_effect_enable %} js-cartButtonPro-addToCartButton hvr-wobble-horizontal{% endif %}">Customize Second Bundle</p>
     </div>
   {% endif %}
 	

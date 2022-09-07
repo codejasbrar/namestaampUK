@@ -235,7 +235,7 @@
           </div>
       {% endfor %}
       {% for product in collections.choose-stamp-3.products %}
-          <div class="popup-product" id="currnt_product_div_id_choose-stamp-3{{ product.selected_or_first_available_variant.id }}" style="display:none;">
+          <div class="popup-product" id="currnt_product_div_id_choose-stamp-3-{{ product.selected_or_first_available_variant.id }}" style="display:none;">
             <h3 style="display:none;">{{ product.title }}</h3>
             {% assign varID = product.selected_or_first_available_variant.id %}
             <div class="product-form bundle_1">
@@ -302,9 +302,7 @@ window.onclick = function(event) {
   if (event.target == modal_popup) {
     modal_popup.style.display = "none";
   }
-}  
-
-  
+}    
 </script>
 	<script>
       $(document).ready(function(){
@@ -344,6 +342,11 @@ window.onclick = function(event) {
           $(this).parents('.product-form').next('.product-form').show();
           $(this).parents('.product-form').next('.product-form').find('.addtocart_btn').attr('disabled','disabled');
           $(this).parents('.product-form').next('.product-form').trigger('focus');
+          $('#mymodal_popup').stop().animate({
+	        'scrollTop': $(this).parents('.product-form').next('.product-form').offset().top
+	    }, 900, 'swing', function () {
+	        // window.location.hash = target;
+	    });
 		});
 	
 	</script>
@@ -435,7 +438,7 @@ window.onclick = function(event) {
           this.nextElementSibling.removeAttribute('style');
           form.querySelector('div.spb-label-tooltip.preview>div>div>div>p:first-child').innerHTML = this.value;
         }
-  console.log("form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked')",form.querySelector('input.single-option-selector__radio.js-single-option-selector'));
+  // console.log("form.querySelector('input.single-option-selector__radio.js-single-option-selector:checked')",form.querySelector('input.single-option-selector__radio.js-single-option-selector'));
         if (this.value.length > 0 && btn){
           var total_p_form = $(btn).parents(".popup-product").find('.product-form').length;
           console.log("total_p_form=>",total_p_form)
